@@ -71,6 +71,7 @@ require 'session.php';
                 </form>
                 
                 <?php else:
+                $_SESSION = NULL;
                 $username = $_POST['username'];
                 $pass_hash = md5($_POST['password']);
                 require 'database_connect.php';

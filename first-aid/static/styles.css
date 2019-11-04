@@ -62,7 +62,7 @@ button
 table
 {
     width: 50%;
-    font-size: 32px;
+    font-size: 24px;
     color: red;
     border: solid 2px red;
     margin: 20px;
@@ -72,4 +72,9 @@ th, td
 {
     padding: 20px;
     border: solid 2px red;
+}
+
+.cntr
+{
+    text-align: center;
 }
