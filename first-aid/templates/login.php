@@ -1,9 +1,5 @@
 <?php  
-error_reporting(E_ALL & ~E_NOTICE);
-ini_set('display_errors', 1);
-
 require 'session.php';
-
 ?>
 
 <!DOCTYPE html>
@@ -31,14 +27,14 @@ require 'session.php';
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
-        <title>Перша допомога</title>
+        <title>Вход</title>
 
     </head>
 
     <body>
         <header style="margin: 0px">
             <p style="background-color: rgb(218, 41, 28); padding: 5px; color: white; text-align: center">(044) 235-01-57      Національний комітет - 01004, Київ, вул. Пушкінська, 30</p>
-            <a href="https://redcross.org.ua/"><img style="margin: 15px;" width="120px" height="120px" src="/static/logo.jpg" alt="URCS logo"></a>
+            <a class="blank_link" href="https://redcross.org.ua/"><img style="margin: 15px;" width="120px" height="120px" src="/static/logo.jpg" alt="URCS logo"></a>
             <h1>Товариство Червоного Хреста України</h1>
         </header>
 
