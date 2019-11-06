@@ -66,11 +66,7 @@ require 'session.php';
         <main>
 
             <?php if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-                if($_SESSION['type'] != 1) {
-                    $_SESSION['apology_code'] = 403;
-                    $_SESSION['apology_message'] = 'FORBIDDEN';
-                    header('Location: /templates/apology.php');
-                }
+                require 'login_require.php';
                 require 'database_connect.php';
                 $query = $pdo->prepare('SELECT * FROM registrants WHERE completed != 1');
                 $execution_result = $query->execute();
@@ -93,7 +89,7 @@ require 'session.php';
                                     <th>Ім'я</th>
                                     <th>Контактні дані</th>
                                     <th>Тип тренінгу</th>
-                                    <th>Зареэстровано</th>
+                                    <th>Зареєстровано</th>
                                 </tr>
                             </thead>
                             <tbody>

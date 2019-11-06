@@ -1,5 +1,6 @@
 <?php
 require 'session.php';
+require 'login_require.php';
 ?>
 
 <!DOCTYPE html>

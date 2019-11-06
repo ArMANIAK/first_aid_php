@@ -1,5 +1,6 @@
 <?php  
 require 'session.php';
+require 'login_require.php';
 ?>
 
 <!DOCTYPE html>
@@ -99,7 +100,7 @@ require 'session.php';
                             <td> <? = $result[0]['medi'] || 0 ?> </td>
                         </tr>
                         <tr>
-                            <td>Важко</td>
+                            <td>Складно</td>
                             <td> <?php echo($result[0]['hard'] || 0) ?> </td>
                         </tr>
                     </tbody>
