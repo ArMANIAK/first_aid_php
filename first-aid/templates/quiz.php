@@ -74,10 +74,13 @@ require 'login_require.php';
                 $difficulty = $_POST['difficulty'];
                 require 'database_connect.php';
                 if ($difficulty === 'easy') {
+                    $_SESSION['difficulty'] = 'easy';
                     $querryString = "SELECT * FROM questions WHERE difficulty='easy'";
                 } elseif ($difficulty === 'medium') {
+                    $_SESSION['difficulty'] = 'medi';
                     $querryString = "SELECT * FROM questions WHERE difficulty<>'hard'";
                 } else {
+                    $_SESSION['difficulty'] = 'hard';
                     $querryString = "SELECT * FROM questions";
                 }
                 $query = $pdo->prepare($querryString);
@@ -85,15 +88,20 @@ require 'login_require.php';
                 $result = $query->fetchAll(PDO::FETCH_ASSOC);
                 $rightAnswers = array();
                 $questions = array();
-                foreach ($result as $question) {
-                    $rightAnswers[$question['question']] = $question['right_ans'];
+                $i = 0;
+                foreach ($result as $task) {
+                    $rightAnswers[$task['question']] = $task['right_ans'];
                     $answers = array();
-                    array_push($answers, $question['right_ans'], $question['wrong1'], $question['wrong2'], $question['wrong3']);
+                    array_push($answers, $task['right_ans'], $task['wrong1'], $task['wrong2'], $task['wrong3']);
                     shuffle($answers);
-                    $questions[$question['question']] = $answers;
+                    $questions[$task['question']] = $answers;
                 }
                 //shuffle($questions);
-                var_dump($difficulty, $_POST['difficulty'], $questions); die;
+                $_SESSION['questions'] = $questions;
+                $_SESSION['answers'] = $rightAnswers;
+                $_SESSION['score'] = 0;
+                $_SESSION['total'] = count($rightAnswers);
+                header('Location: test.php');
                 endif ?>
 
                 <p style="height: 3px; background-color: rgb(218, 41, 28)"></p>

@@ -64,7 +64,7 @@ require 'session.php';
                     <input autocomplete="off" autofocus class="form-input" name="username" placeholder="Username" type="text">
                     <input class="form-input" name="password" placeholder="Password" type="password">
                     <input class="form-input" name="confirmation" placeholder="Repeat Your Password" type="password">
-                    <button class="form-input" type="submit">Register for free without SMS</button>
+                    <button class="form-input" type="submit">Зареєструватись</button>
 
                 </form>
             <?php else:

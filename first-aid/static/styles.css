@@ -83,3 +83,17 @@ th, td
 {
     background-color: transparent;
 }
+
+.answer
+{
+    padding: 5px;
+    margin: 5px;
+    margin-left: 15px;
+    display: block;
+    border-radius: 5px;
+}
+
+.answer-form 
+{
+    background-color: white;
+}
